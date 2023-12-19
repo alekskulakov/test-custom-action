@@ -7,9 +7,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: foo
-        uses: alekskulakov/allure-composite-action@v1.0.1
+        uses: alekskulakov/allure-composite-action@v1.0.2
         with:
           install: true
+          allure_endpoint: ${{ secrets.ALLURE_ENDPOINT }}
+          allure_token: ${{ secrets.ALLURE_TOKEN }}
           allure-project-id: 7
           working-directory: './'
           results: './bin/results'
