@@ -1,0 +1,16 @@
+﻿on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to run tests
+    steps:
+      - uses: actions/checkout@v4
+      - id: foo
+        uses: alekskulakov/allure-composite-action@v1.0.1
+        with:
+          install: true
+          allure-project-id: 7
+          working-directory: './'
+          results: './bin/results'
+          command: 'dotnet tests --no-build'
