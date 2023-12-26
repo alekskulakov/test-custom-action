@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: foo
-        uses: alekskulakov/allure-composite-action@v1
+        uses: alekskulakov/allure-composite-action@branch_1
         with:
           install: true
           allure-endpoint: ${{ secrets.ALLURE_ENDPOINT }}
@@ -18,4 +18,4 @@ jobs:
           allure-project-id: 7
           working-directory: './TestProject1'
           results: './bin/results'
-          command: 'ls'
+          command: 'dotnet test'
