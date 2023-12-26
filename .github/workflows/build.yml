@@ -7,9 +7,7 @@ jobs:
     steps:
       - name: set output
         run: |
-          {
-            "allure_lauhch_url=dfgsgsdfgsdf"
-          } >> $GITHUB_OUTPUT
+          echo "allure_url=https://green" >> "$GITHUB_OUTPUT"
       - name: show github_output
         run: |
           echo $GITHUB_OUTPUT
