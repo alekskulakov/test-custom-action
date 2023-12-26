@@ -8,9 +8,14 @@ jobs:
         version: [ 10, 12, 14 ]
     name: A job to run tests
     steps:
-      - name: set output
-        id: color
-        run: |
-          echo "allure_url=https:// ${{ matrix.version }}" >> "$GITHUB_OUTPUT"
-      - name: show github_output
-        run: echo "The selected color is ${{ steps.color.outputs.allure_url }}"
+      - uses: actions/checkout@v4
+      - id: foo
+        uses: alekskulakov/allure-composite-action@v1
+        with:
+          install: true
+          allure-endpoint: ${{ secrets.ALLURE_ENDPOINT }}
+          allure-token: ${{ secrets.ALLURE_TOKEN }}
+          allure-project-id: 7
+          working-directory: './'
+          results: './bin/results'
+          command: 'dotnet tests --no-build'
