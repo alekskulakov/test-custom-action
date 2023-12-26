@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to run tests
     steps:
+      - name: set output
+        run: |
+          "allure_lauhch_url=https://asdfadsfladskfhadljsfh.com"
       - name: show github_output
         run: |
           echo $GITHUB_OUTPUT
