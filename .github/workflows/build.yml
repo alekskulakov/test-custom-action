@@ -9,7 +9,7 @@ jobs:
     name: A job to run tests
     steps:
       - name: set output
-        id: color_${{ matrix.version }}
+        id: color
         run: |
           echo "allure_url=https:// ${{ matrix.version }}" >> "$GITHUB_OUTPUT"
       - name: show github_output
