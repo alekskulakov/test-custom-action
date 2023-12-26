@@ -16,6 +16,6 @@ jobs:
           allure-endpoint: ${{ secrets.ALLURE_ENDPOINT }}
           allure-token: ${{ secrets.ALLURE_TOKEN }}
           allure-project-id: 7
-          working-directory: './'
+          working-directory: './TestProject1'
           results: './bin/results'
-          command: 'dotnet tests --no-build'
+          command: 'dotnet test'
