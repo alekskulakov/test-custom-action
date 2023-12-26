@@ -8,7 +8,7 @@ jobs:
       - name: set output
         run: |
           {
-            "allure_lauhch_url=https://asdfadsfladskfhadljsfh.com"
+            "allure_lauhch_url=dfgsgsdfgsdf"
           } >> $GITHUB_OUTPUT
       - name: show github_output
         run: |
