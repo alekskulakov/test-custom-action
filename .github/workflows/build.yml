@@ -6,8 +6,8 @@ jobs:
     name: A job to run tests
     steps:
       - name: set output
+        id: color
         run: |
           echo "allure_url=https://green" >> "$GITHUB_OUTPUT"
       - name: show github_output
-        run: |
-          echo $GITHUB_OUTPUT
+        run: echo "The selected color is ${{ steps.color.outputs.allure_url }}"
