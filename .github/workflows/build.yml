@@ -3,11 +3,14 @@
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ 10, 12, 14 ]
     name: A job to run tests
     steps:
       - name: set output
-        id: color
+        id: color_${{ matrix.version }}
         run: |
-          echo "allure_url=https://green" >> "$GITHUB_OUTPUT"
+          echo "allure_url=https:// ${{ matrix.version }}" >> "$GITHUB_OUTPUT"
       - name: show github_output
         run: echo "The selected color is ${{ steps.color.outputs.allure_url }}"
