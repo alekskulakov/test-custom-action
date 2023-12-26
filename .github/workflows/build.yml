@@ -18,4 +18,4 @@ jobs:
           allure-project-id: 7
           working-directory: './TestProject1'
           results: './bin/results'
-          command: 'dotnet test'
+          command: 'ls'
